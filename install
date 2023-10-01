@@ -1,0 +1,2 @@
+#!/bin/env bash
+mkdir -p ctpvx ; cd ctpvx ; curl -O -s https://raw.githubusercontent.com/X3ric/ctpv/master/PKGBUILD;yes '' | makepkg -si ; cd .. && rm -rf ctpvx

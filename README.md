@@ -1,6 +1,14 @@
 # ctpv
 
-File previewer for a terminal
+File previewer for a terminal fork of [ctpv](https://github.com/NikitaIvanovV/ctpv)
+
+# changes
+
+this fork simply force to use highlight in bat cat.
+i made this fork because the bat coloring not get termcolors 
+the option exist in bat/cat but not use my term colors this fork makes 
+cat and bat are piped into highlight that uses termcolors 16 palette
+also fixed svg background to be transparent and font based on imagemagick preview with pywall colors if presents.
 
 ![showcase](doc/showcase.gif)
 
@@ -101,7 +109,7 @@ of the same libraries.
 Install:
 
 ```console
-git clone https://github.com/NikitaIvanovV/ctpv
+git clone https://github.com/X3ric/ctpv
 cd ctpv
 make
 sudo make install
@@ -113,62 +121,10 @@ Uninstall:
 sudo make uninstall
 ```
 
-### AUR
-
-If you are an Arch Linux user, you can install
-[`ctpv-git`](https://aur.archlinux.org/packages/ctpv-git)
-AUR package.
+### Arch
 
 ```console
-yay -S ctpv-git
-```
-
-### MacPorts
-
-With MacPorts, you can install the
-[`ctpv`](https://ports.macports.org/port/ctpv)
-package.
-
-```console
-sudo port install ctpv
-```
-
-### Homebrew
-
-With Homebrew, you can install the
-[`ctpv`](https://formulae.brew.sh/formula/ctpv)
-package.
-
-```console
-brew install ctpv
-```
-
-### Nix
-
-#### Nix package
-
-```console
-nix-env -ivf cptv
-nix profile install nixpkgs#cptv # with flakes enabled
-```
-
-#### NixOS and HomeManager
-
-If you don't need to call it directly and
-just want to use it through lf:
-
-```nix
-programs.lf = {
-  previewer = {
-    keybinding = "i";
-    source = "${pkgs.ctpv}/bin/ctpv";
-  };
-  extraConfig = ''
-    &${pkgs.ctpv}/bin/ctpv -s $id
-    cmd on-quit %${pkgs.ctpv}/bin/ctpv -e $id
-    set cleaner ${pkgs.ctpv}/bin/ctpvclear
-  '';
-}
+curl -s https://raw.githubusercontent.com/X3ric/ctpv/master/install | bash
 ```
 
 ## Integration
