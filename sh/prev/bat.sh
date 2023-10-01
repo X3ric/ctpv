@@ -8,10 +8,8 @@ else
 	exit 127
 fi
 
-"$batcmd" \
-	--color always        \
+cat < "$f" | highlight -O ansi -C "${f}" | "$batcmd" \
 	--style plain         \
 	--paging never        \
 	--terminal-width "$w" \
 	--wrap character      \
-	-- "$f"

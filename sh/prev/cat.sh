@@ -1,3 +1,3 @@
 # text: cat
 
-cat < "$f"
+cat < "$f" | highlight -O ansi -C "${f}"
